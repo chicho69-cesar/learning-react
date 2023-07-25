@@ -1,0 +1,27 @@
+{
+  "name": "learning-react",
+  "version": "1.0.0",
+  "description": "Repositorio con los proyectos del curso de React de midudev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "sui-mono commit"
+  },
+  "workspaces": [
+    "projects/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chicho69-cesar/learning-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chicho69-cesar/learning-react/issues"
+  },
+  "homepage": "https://github.com/chicho69-cesar/learning-react#readme",
+  "author": "Cesar Villalobos Olmos",
+  "license": "ISC",
+  "dependencies": {
+    "@s-ui/mono": "^2.35.0",
+    "standard": "^17.1.0"
+  }
+}
