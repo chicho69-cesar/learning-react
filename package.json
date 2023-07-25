@@ -23,5 +23,8 @@
   "dependencies": {
     "@s-ui/mono": "^2.35.0",
     "standard": "^17.1.0"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
   }
 }
