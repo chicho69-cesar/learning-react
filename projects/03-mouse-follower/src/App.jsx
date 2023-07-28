@@ -23,7 +23,7 @@ const FollowMouse = () => {
       window.addEventListener('pointermove', handleMove)
     }
 
-    /* Cuando se ejecuta la función cleanup
+    /* Cuando se ejecuta la función cleanup:
     -> Cuando el componente se desmonta
     -> Cuando cambian las dependencias antes de ejecutar el effect de nuevo
     */
