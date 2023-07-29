@@ -30,6 +30,11 @@ export function Router ({
   let routeParams = {}
 
   // add routes from children <Route /> components
+  /* El objeto especial Children de React nos permite acceder a los componentes hijos
+  del componente en el que lo usamos, y los podemos mapear como un arreglo de componentes
+  donde el map de este recibe el children que se recibe de las props y un callback, 
+  el cual se ejecutara en cada map, callback el cual recibe el Componente que se
+  esta iterando del cual podemos extraer las props y el type de dicho componente */
   const routesFromChildren = Children.map(children, ({ props, type }) => {
     const { name } = type
     const isRoute = name === 'Route'
