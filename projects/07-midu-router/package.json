@@ -1,8 +1,16 @@
 {
   "name": "07-midu-router",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,17 +18,25 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "path-to-regexp": "6.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@swc/cli": "0.1.62",
+    "@swc/core": "1.3.72",
+    "@testing-library/dom": "9.3.1",
+    "@testing-library/react": "14.0.0",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
     "@vitejs/plugin-react-swc": "3.3.2",
+    "@vitest/ui": "0.33.0",
     "eslint": "8.45.0",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-react-refresh": "0.4.3",
-    "vite": "4.4.5"
+    "happy-dom": "10.5.2",
+    "vite": "4.4.5",
+    "vitest": "0.33.0"
   }
 }
