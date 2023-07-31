@@ -1,0 +1,23 @@
+.copyright {
+  filter: invert(1);
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  padding: 8px 24px;
+  border: 1px solid white;
+  border-radius: 32px;
+  color: white;
+  text-align: left;
+  opacity: .95;
+}
+
+.copyright span {
+  font-size: 14px;
+  color: #09f;
+  opacity: .8;
+}
+
+.copyright h4, .copyright h5 {
+  margin: 0;
+  display: flex;
+}
