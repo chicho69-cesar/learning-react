@@ -31,7 +31,9 @@
     "tanstack",
     "tipar",
     "todoapp",
-    "Villalobos"
+    "Villalobos",
+    "wouter",
+    "zustand"
   ],
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
