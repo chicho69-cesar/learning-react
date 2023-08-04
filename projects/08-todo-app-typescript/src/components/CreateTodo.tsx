@@ -7,6 +7,8 @@ interface Props {
 export const CreateTodo: React.FC<Props> = ({ saveTodo }) => {
   const [inputValue, setInputValue] = useState('')
 
+  /* Cuando usamos TypeScript con React debemos de especificar el tipo de Evento
+  que se ejecuta en una función y como genérico el elemento HTML que lanza dicho evento */
   const handleKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
     if (e.key === 'Enter' && inputValue !== '') {
       saveTodo(inputValue)

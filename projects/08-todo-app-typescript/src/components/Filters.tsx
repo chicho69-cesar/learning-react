@@ -14,6 +14,8 @@ interface Props {
 }
 
 export const Filters: React.FC<Props> = ({ handleFilterChange, filterSelected }) => {
+  /* También podemos especificar el tipo de evento que queremos manejar en el parámetro
+  (e | event) de la función, no solo el tipo de la función */
   const handleClick = (filter: FilterValue) => (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
     handleFilterChange(filter)

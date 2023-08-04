@@ -8,6 +8,10 @@ interface Todo {
 }
 
 export const fetchTodos = async (): Promise<Todo[]> => {
+  /* Para usar variables de entorno en Vite, hay que usar la función import.meta.env.
+  con ello accedemos a las env variables, aunque hay que tener en cuenta que aunque
+  no publiquemos las .env en GitHub si hacemos deploy del proyecto estas .env van a
+  estar disponibles en el navegador. ¡POR LO QUE NO ES SEGURO USARLAS AQUÍ! */
   const response = await fetch(import.meta.env.VITE_API_URL, {
     method: 'GET',
     headers: {
