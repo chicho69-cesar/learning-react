@@ -34,6 +34,8 @@ function App () {
 
     translate({ fromLanguage, text: debouncedFromText, toLanguage })
       .then((result) => {
+        /* En TypeScript para evaluar que un valor no sea null se sugiere usar solo
+        el doble igual == porque el de === evaluara todos los valores falsy */
         if (result == null) return
         setResult(result)
       })
