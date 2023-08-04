@@ -1,12 +1,15 @@
-import { useState } from 'react'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import { Toaster } from 'sonner'
+import { ListOfUsers } from './components/ListOfUsers'
+import { UserActions } from './components/UserActions'
 
+function App () {
   return (
     <>
-      <h1>Hola Mundo</h1>
+      <ListOfUsers />
+      <UserActions />
+      <Toaster richColors />
     </>
   )
 }
