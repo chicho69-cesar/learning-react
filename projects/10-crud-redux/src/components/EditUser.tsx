@@ -8,8 +8,11 @@ import { useUserActions } from '../hooks/useUserActions';
 export const EditUser = () => {
   const [result, setResult] = useState<'ok' | 'ko' | null>(null)
 
+  /* Accedemos al estado de la slice de UI */
   const ui = useAppSelector((state) => state.ui)
+  /* Accedemos a una acción definida para UI */
   const { stablishIsAddingUser } = useUIActions()
+  /* Accedemos a una acción definida para User  */
   const { editUser } = useUserActions()
 
   const { userToEdit } = ui

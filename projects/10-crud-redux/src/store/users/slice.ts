@@ -43,16 +43,23 @@ const initialState: UserWithId[] = (() => {
   return JSON.parse(persistedState)['users'] as UserWithId[]
 })()
 
+/* Creamos un slice de Redux que nos permite manipular los usuarios. Donde el name
+de la slice va a ser users, le pasamos el estado inicial y las acciones que nos van a
+ayudar a manipular el estado de los usuarios. */
 export const usersSlice = createSlice({
   name: 'users',
   initialState,
   reducers: {
+    /* Con Redux a diferencia del context api, donde usamos reducer, podemos mutar el
+    estado y este se actualizara correctamente gracias a la dependencia de immer en redux
+    a diferencia del reducer que debíamos de regresar un nuevo estado en lugar de mutarlo */
     addNewUser: (state, action: PayloadAction<User>) => {
       const id = window.crypto.randomUUID()
       state.push({ id, ...action.payload })
     },
     deleteUserById: (state, action: PayloadAction<UserId>) => {
       const id = action.payload
+      /* También podemos regresar un nuevo estado si no queremos mutarlo */
       return state.filter((user) => user.id !== id)
     },
     rollbackUser: (state, action: PayloadAction<UserWithId>) => {
@@ -68,8 +75,10 @@ export const usersSlice = createSlice({
   },
 })
 
+/* Exportamos el reducer que nos permite manipular los usuarios. */
 export default usersSlice.reducer
 
+/* Exportamos las acciones que nos permiten manipular el estado de usuarios. */
 export const {
   addNewUser,
   deleteUserById,

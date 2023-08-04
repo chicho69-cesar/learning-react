@@ -15,6 +15,7 @@ import { useUserActions } from '../hooks/useUserActions'
 import { useUIActions } from '../hooks/useUIActions'
 
 export const ListOfUsers = () => {
+  /* Accedemos a el estado de los usuarios de la aplicación con nuestro app selector */
   const users = useAppSelector((state) => state.users)
 
   const { removeUser } = useUserActions()
