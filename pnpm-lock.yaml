@@ -646,22 +646,22 @@ importers:
   projects/14-hacker-news-prueba-tecnica:
     dependencies:
       '@vanilla-extract/css':
-        specifier: ^1.12.0
+        specifier: 1.12.0
         version: 1.12.0
       react:
         specifier: 18.2.0
         version: 18.2.0
       react-content-loader:
-        specifier: ^6.2.1
+        specifier: 6.2.1
         version: 6.2.1(react@18.2.0)
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
       swr:
-        specifier: ^2.2.0
+        specifier: 2.2.0
         version: 2.2.0(react@18.2.0)
       wouter:
-        specifier: ^2.11.0
+        specifier: 2.11.0
         version: 2.11.0(react@18.2.0)
     devDependencies:
       '@types/react':
@@ -676,6 +676,40 @@ importers:
       typescript:
         specifier: 5.0.2
         version: 5.0.2
+      vite:
+        specifier: 4.4.5
+        version: 4.4.5(@types/node@20.4.5)
+
+  projects/15-react-router-contacts:
+    dependencies:
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@types/react':
+        specifier: 18.2.15
+        version: 18.2.15
+      '@types/react-dom':
+        specifier: 18.2.7
+        version: 18.2.7
+      '@vitejs/plugin-react-swc':
+        specifier: 3.3.2
+        version: 3.3.2(vite@4.4.5)
+      eslint:
+        specifier: 8.45.0
+        version: 8.45.0
+      eslint-plugin-react:
+        specifier: 7.32.2
+        version: 7.32.2(eslint@8.45.0)
+      eslint-plugin-react-hooks:
+        specifier: 4.6.0
+        version: 4.6.0(eslint@8.45.0)
+      eslint-plugin-react-refresh:
+        specifier: 0.4.3
+        version: 0.4.3(eslint@8.45.0)
       vite:
         specifier: 4.4.5
         version: 4.4.5(@types/node@20.4.5)
