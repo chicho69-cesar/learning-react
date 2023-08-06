@@ -1,9 +1,10 @@
 import './App.css'
+import SingleResponsibility from './components/SingleResponsibility'
 
 function App() {
   return (
     <>
-      <h1>Hola Mundo</h1>
+      <SingleResponsibility />
     </>
   )
 }
