@@ -11,19 +11,23 @@ import Contact, { loader as contactLoader, action as contactAction } from './rou
 import EditContact, { action as editContactAction } from './routes/Edit'
 import { action as destroyAction } from './routes/Destroy'
 
+/* Asi podemos definir las rutas de nuestro proyecto especificando cada una de las rutas
+como un objeto del arreglo que recibe createBrowserRouter */
 // eslint-disable-next-line no-unused-vars
 const routerFromObjects = createBrowserRouter([
   {
-    path: '/',
-    element: <Root />,
-    errorElement: <ErrorPage />,
-    loader: rootLoader,
-    action: rootAction,
-    children: [
+    path: '/', // Path es la ruta que va a tener el component
+    element: <Root />, // Element es el componente que va a renderizar cuando se haga match con la ruta
+    errorElement: <ErrorPage />, // ErrorElement es el componente que va a renderizar cuando ocurra un error en el match con la ruta
+    loader: rootLoader, // Loader es una función que se ejecuta antes de renderizar el componente
+    action: rootAction, // Action es una función que se ejecuta se hace un submit de un Form
+    children: [ // Children es un arreglo de objetos que contiene las rutas hijas
       {
-        errorElement: <ErrorPage />,
+        errorElement: <ErrorPage />, // errorElement compartido con las rutas hijas
         children: [
           {
+            /* Las rutas son index son las rutas por defecto, es decir, la primer
+            ruta hija que se va a renderizar cuando estemos en su ruta padre */
             index: true,
             element: <Index />,
           },
@@ -50,6 +54,8 @@ const routerFromObjects = createBrowserRouter([
   },
 ])
 
+/* Asi podemos definir las rutas de nuestro proyecto especificando cada una de las rutas
+con elementos JSX y no con objetos */
 const routerFromJSX = createBrowserRouter(
   createRoutesFromElements(
     <Route 
@@ -88,6 +94,7 @@ const routerFromJSX = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    {/* Renderizamos nuestras rutas */}
     <RouterProvider router={routerFromJSX} />
   </React.StrictMode>,
 )

@@ -7,6 +7,7 @@ export async function action({ request, params }) {
 
   await updateContact(params.contactId, updates)
 
+  /* La función redirect nos ayuda a redirigirnos a otras rutas de la app */
   return redirect(`/contacts/${params.contactId}`)
 }
 
@@ -15,7 +16,7 @@ export default function EditContact() {
   const navigate = useNavigate()
 
   const handleCancel = () => {
-    navigate(-1)
+    navigate(-1) // Navegamos atrás
   }
 
   return (

@@ -1,6 +1,8 @@
 import { useRouteError } from 'react-router-dom'
 
 export default function ErrorPage() {
+  /* El hook useRouteError nos permite acceder al error de la navegación especificado
+  por la ruta que tiene a esta pagina como errorElement */
   const error = useRouteError()
   console.log(error)
 

@@ -6,6 +6,7 @@ export async function loader({ params }) {
   const contact = await getContact(params.contactId)
 
   if (!contact) {
+    /* Creamos un error en el loader para dirigirnos a la pagina errorElement */
     throw new Response('', {
       status: 404,
       statusText: 'Contact Not Found',
@@ -62,6 +63,10 @@ export default function Contact() {
         {contact.notes && <p>{contact.notes}</p>}
 
         <div>
+          {/* Cuando especificamos la acción en el Form, esta se concatenara a la ruta
+          y dispara la acción correspondiente en la ruta final, asi por ejemplo si estamos
+          en la ruta /contact/:contactId y hacemos click en el botón Edit, se disparara
+          la acción de la ruta /contact/:contactId/edit con el método GET */}
           <Form action='edit'>
             <button type='submit'>Edit</button>
           </Form>
