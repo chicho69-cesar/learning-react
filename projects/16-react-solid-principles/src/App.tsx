@@ -1,10 +1,12 @@
 import './App.css'
-import SingleResponsibility from './components/SingleResponsibility'
+import OpenClosed from './components/OpenClosed'
+// import SingleResponsibility from './components/SingleResponsibility'
 
 function App() {
   return (
     <>
-      <SingleResponsibility />
+      {/* <SingleResponsibility /> */}
+      <OpenClosed />
     </>
   )
 }
