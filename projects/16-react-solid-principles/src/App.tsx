@@ -1,6 +1,7 @@
 import './App.css'
 
-import InterfaceSegregation from './components/InterfaceSegregation'
+import DependencyInversion from './components/DependencyInversion'
+// import InterfaceSegregation from './components/InterfaceSegregation'
 // import LiskovSubstitution from './components/LiskovSubstitution'
 // import OpenClosed from './components/OpenClosed'
 // import SingleResponsibility from './components/SingleResponsibility'
@@ -11,7 +12,8 @@ function App() {
       {/* <SingleResponsibility /> */}
       {/* <OpenClosed /> */}
       {/* <LiskovSubstitution /> */}
-      <InterfaceSegregation />
+      {/* <InterfaceSegregation /> */}
+      <DependencyInversion />
     </>
   )
 }
