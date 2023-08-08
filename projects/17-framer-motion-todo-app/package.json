@@ -14,8 +14,12 @@
     "vite": "4.4.5"
   },
   "dependencies": {
+    "classnames": "^2.3.2",
+    "framer-motion": "^10.15.1",
+    "prop-types": "^15.8.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "todomvc-app-css": "^2.4.2"
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
