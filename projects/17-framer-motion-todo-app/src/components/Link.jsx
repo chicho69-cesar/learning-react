@@ -12,6 +12,9 @@ export default function Link ({ children, filter }) {
     <a
       href='#'
       type='button'
+      /* El paquete classNames nos permite agregar clases a nuestros elementos html
+      pudiendo concatenarlas y hacer condiciones para mostrar las clases en los
+      componentes usando condicionales */
       className={classNames({
         selected: filter === visibilityFilter
       })}

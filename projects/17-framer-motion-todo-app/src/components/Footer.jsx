@@ -13,7 +13,7 @@ export default function Footer ({ activeCount, completedCount, onClearCompleted 
       </span>
 
       <ul className='filters'>
-        {FILTER_TITLES.map(filter => (
+        {FILTER_TITLES.map((filter) => (
           <li key={filter}>
             <FilterLink filter={filter}>{filter}</FilterLink>
           </li>
@@ -33,6 +33,8 @@ export default function Footer ({ activeCount, completedCount, onClearCompleted 
   )
 }
 
+/* Utilizamos el paquete de prop-types para validar los tipos de las props
+en un componente en React con JavaScript sin usar TypeScript */
 Footer.propTypes = {
   completedCount: PropTypes.number.isRequired,
   activeCount: PropTypes.number.isRequired,

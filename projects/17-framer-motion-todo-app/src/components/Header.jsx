@@ -9,6 +9,10 @@ export default function Header () {
 
   return (
     <header className='header'>
+      {/* Motion es una librería en la cual mediante el componente motion podemos
+      usar todos los elementos html que pueden ser animables, y principalmente
+      las props de initial y de animate aceptan las propiedades css de los
+      elementos, propiedades las cuales son animables */}
       <motion.h1
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
