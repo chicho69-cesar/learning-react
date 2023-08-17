@@ -47,7 +47,7 @@
     "source.fixAll": true,
     "source.organizeImports": true
   },
-  "[javascript]": {
+  /* "[javascript]": {
     "editor.defaultFormatter": "rome.rome"
   },
   "[javascriptreact]": {
@@ -58,5 +58,5 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "rome.rome"
-  }
+  } */
 }
