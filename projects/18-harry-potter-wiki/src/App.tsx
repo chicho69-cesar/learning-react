@@ -3,8 +3,8 @@ import styles from './App.module.scss'
 import useCharacters from './hooks/use-characters'
 import Header from './components/Header/Header'
 import TypeFilters from './components/TypeFilters/TypeFilters'
-import Character from './components/Character/Character'
 import Title from './components/Title/Title'
+import Characters from './components/Characters/Characters'
 
 export default function App() {
   const { filteredCharacters } = useCharacters()
@@ -20,12 +20,7 @@ export default function App() {
 
         <section className={styles.content}>
           <Title />
-
-          <div className={styles.characters}>
-            {filteredCharacters.map((character) => (
-              <Character key={character.id} character={character} />
-            ))}
-          </div>
+          <Characters characters={filteredCharacters} />
         </section>
       </main>
     </>

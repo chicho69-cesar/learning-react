@@ -10,7 +10,7 @@ export default function Character({ character }: Props) {
     <article className={styles.character}>
       <img
         className={styles.image}
-        src={character.image === '' ? '../public/no-image.png' : character.image}
+        src={character.image === '' ? '/no-image.png' : character.image}
         alt={character.name}
       />
 
@@ -35,7 +35,7 @@ export default function Character({ character }: Props) {
 
         {character.house !== '' && (
           <img
-            src={`../../../public/${character.house}.png`}
+            src={`/${character.house}.png`}
             alt={character.house}
             className={styles.house}
           />

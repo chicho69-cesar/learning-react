@@ -1,8 +1,6 @@
 import styles from './Title.module.scss'
 import useFilters from '../../hooks/use-filters'
-
-const houses = ['House', 'Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin']
-const genres = ['Genre', 'male', 'female', 'neutral']
+import { GENDERS, HOUSES } from '../../constants'
 
 export default function Title() {
   const { filters, changeHouse, changeGenre } = useFilters()
@@ -25,7 +23,7 @@ export default function Title() {
           value={filters.house}
           onChange={handleChangeHouse}
         >
-          {houses.map((house) => (
+          {HOUSES.map((house) => (
             <option key={house} value={house}>
               {house}
             </option>
@@ -37,9 +35,9 @@ export default function Title() {
           value={filters.genre}
           onChange={handleChangeGenre}
         >
-          {genres.map((genre) => (
-            <option key={genre} value={genre}>
-              {genre}
+          {GENDERS.map((gender) => (
+            <option key={gender} value={gender}>
+              {gender}
             </option>
           ))}
         </select>

@@ -5,6 +5,7 @@ import { Character, Ancestry } from '../types/characters'
 import useFilters from './use-filters'
 import useSearch from './use-search'
 import useDebounce from './use-debounce'
+import type { FiltersType, TypeFiltersType } from '../types/types.d'
 
 export default function useCharacters() {
   const { data, isLoading, error } = useSWR<Character[], string>('characters')
@@ -41,17 +42,7 @@ export default function useCharacters() {
   }
 }
 
-function filterByType(
-  character: Character,
-  typeFilters: {
-    all: boolean;
-    wizards: boolean;
-    muggles: boolean;
-    'half-blob': boolean;
-    'pure-blob': boolean;
-    alive: boolean;
-  }
-): boolean {
+function filterByType(character: Character, typeFilters: TypeFiltersType): boolean {
   const {
     all,
     wizards,
@@ -71,13 +62,7 @@ function filterByType(
   )
 }
 
-function filterByFilters(
-  character: Character, 
-  filters: {
-    house: string;
-    genre: string;
-  }
-): boolean {
+function filterByFilters(character: Character, filters: FiltersType): boolean {
   const { house, genre } = filters
 
   return (

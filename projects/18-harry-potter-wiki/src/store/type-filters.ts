@@ -1,13 +1,7 @@
 import { atom } from 'recoil'
+import { defaultTypeFilters } from '../constants'
 
 export const typeFiltersState = atom({
   key: 'typeFiltersState',
-  default: {
-    all: true,
-    wizards: false,
-    muggles: false,
-    'half-blob': false,
-    'pure-blob':  false,
-    alive: false,
-  }
+  default: defaultTypeFilters,
 })
