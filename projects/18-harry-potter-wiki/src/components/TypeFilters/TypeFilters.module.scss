@@ -1,0 +1,5 @@
+@use '../../sass/utils' as utils;
+
+.filters {
+  @include utils.flex(column, 0.25rem, flex-start, flex-start);
+}

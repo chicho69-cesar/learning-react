@@ -1,0 +1,35 @@
+@use '../../sass/utils' as utils;
+
+.header {
+  width: 100%;
+  padding: 0.65rem;
+}
+
+.block {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  @include utils.flex();
+}
+
+.logo {
+  font-size: 3rem;
+  color: utils.$emerald600;
+}
+
+.searcher {
+  display: inline-block;
+  width: 25%;
+  padding: 0.65rem 1rem;
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: utils.$slate800;
+  color: #fff;
+
+  &:focus {
+    border-color: utils.$emerald500;
+    background-color: utils.$slate700;
+  }
+}

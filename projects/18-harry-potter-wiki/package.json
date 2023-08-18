@@ -10,10 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@prismane/core": "^0.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "recoil": "^0.7.7",
+    "recoil": "0.7.7",
+    "sass": "1.66.0",
     "swr": "2.2.0"
   },
   "devDependencies": {

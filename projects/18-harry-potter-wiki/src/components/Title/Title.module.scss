@@ -1,0 +1,23 @@
+@use '../../sass/utils' as utils;
+
+.titleContainer {
+  @include utils.flex();
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: utils.$slate200;
+}
+
+.filter {
+  width: 200px;
+  margin-left: 1rem;
+  padding: 0.5rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: utils.$slate700;
+  color: utils.$slate200;
+}

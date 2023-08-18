@@ -1,0 +1,18 @@
+@use '../../sass/utils' as utils;
+
+.formGroup {
+  width: 100%;
+
+  input {
+    margin-right: 0.5rem;
+    &:hover { cursor: pointer; }
+  }
+
+  label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: utils.$slate50;
+
+    &:hover { cursor: pointer; }
+  }
+}

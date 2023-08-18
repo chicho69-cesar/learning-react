@@ -1,0 +1,27 @@
+@use './sass/utils' as utils;
+
+.container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  flex: 1;
+  @include utils.flex(row, 2rem, space-between, flex-start);
+}
+
+.sidebar {
+  flex-basis: 20%;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  background-color: utils.$slate700;
+  box-shadow: 5px 5px 20px rgba(utils.$slate700, 10%);
+}
+
+.content {
+  flex: 1;
+}
+
+.characters {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}

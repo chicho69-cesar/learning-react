@@ -1,0 +1,13 @@
+@use './sass/utils' as utils;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+  accent-color: utils.$emerald500;
+}
+
+.dark {
+  background-color: #252525;
+}

@@ -1,0 +1,64 @@
+@use '../../sass/utils' as utils;
+
+.character {
+  background-color: #101010;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 15px rgba(#101010, 50%);
+}
+
+.image {
+  width: 100%;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  aspect-ratio: 9 / 12;
+  object-fit: cover;
+  object-position: top;
+}
+
+.footer {
+  padding: 0.5rem 0.5rem 0.75rem;
+}
+
+.characterName {
+  margin-bottom: 0.25rem;
+  font-size: 1.125rem;
+  text-align: center;
+  color: utils.$slate100;
+}
+
+.nickname {
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: utils.$slate300;
+}
+
+.characterInfo {
+  @include utils.flex(row, 0.25rem, flex-start);
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+  
+  span {
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    background-color: utils.$emerald700;
+    color: utils.$slate300;
+    font-size: 0.9rem;
+  }
+}
+
+.alive {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: utils.$slate300;
+}
+
+.house {
+  display: inline-block;
+  width: 50px;
+  margin: 0 auto;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+}
