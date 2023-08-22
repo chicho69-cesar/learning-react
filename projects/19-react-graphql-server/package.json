@@ -1,0 +1,22 @@
+{
+  "name": "19-react-graphql-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index",
+    "start": "node index",
+    "server": "json-server --watch db.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "4.9.1",
+    "axios": "1.4.0",
+    "graphql": "16.8.0",
+    "json-server": "0.17.3"
+  }
+}
