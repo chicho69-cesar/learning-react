@@ -1,73 +1,32 @@
-import './App.css'
-
-import { useEffect, useState } from 'react'
-
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Persons from './components/Persons'
+import usePersons from './hooks/use-persons'
 
 export default function App() {
-  const { personCount, persons } = usePersons()
+  const {
+    personCount,
+    persons,
+    loading,
+    error,
+    refetch,
+  } = usePersons()
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-
       <h1>GraphQL + Apollo</h1>
       <h2>Numero de personas: {personCount}</h2>
 
+      <button onClick={() => refetch()}>
+        Volver a cargar personas
+      </button>
+
       <div>
-        <ul className='persons-list'>
-          {persons.map((person) => (
-            <li key={person.id}>
-              <article className='person'>
-                <h3>{person.name}</h3>
-                <p>{person.phone ? person.phone : 'Sin teléfono'}</p>
-              </article>
-            </li>
-          ))}
-        </ul>
+        {loading && <p>Cargando personas...</p>}
+        {error && <p>Error al cargar personas...</p>}
+
+        {persons.length > 0 && (
+          <Persons persons={persons} />
+        )}
       </div>
     </>
   )
-}
-
-function usePersons() {
-  const [personCount, setPersonCount] = useState(0)
-  const [persons, setPersons] = useState([])
-
-  useEffect(() => {
-    fetch('http://localhost:4000/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: `query {
-          personCount
-          persons: allPersons {
-            name,
-            id,
-            phone
-          }
-        }`
-      })
-    })
-      .then((res) => res.json())
-      .then(({ data }) => {
-        setPersonCount(data.personCount)
-        setPersons(data.persons)
-      })
-  }, [])
-
-  return {
-    personCount,
-    persons,
-  }
 }

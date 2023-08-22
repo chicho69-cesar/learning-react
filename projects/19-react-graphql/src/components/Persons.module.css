@@ -1,0 +1,27 @@
+.personsList {
+  list-style: none;
+  margin-top: 2rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.person {
+  cursor: pointer;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #f1f1f1;
+  color: #101010;
+  box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+.activePerson {
+  width: 50%;
+  margin: 2rem auto 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #f1f1f1;
+  color: #101010;
+  box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0.1);
+}
