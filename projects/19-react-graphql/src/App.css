@@ -1,5 +1,6 @@
 #root {
-  max-width: 1280px;
+  width: 90%;
+  max-width: 960px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -11,9 +12,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +25,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,4 +43,21 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.persons-list {
+  list-style: none;
+  margin-top: 2rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.person {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #f1f1f1;
+  color: #101010;
+  box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0.1);
 }
