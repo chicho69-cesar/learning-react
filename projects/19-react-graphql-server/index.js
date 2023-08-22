@@ -6,6 +6,7 @@ import { startStandaloneServer } from '@apollo/server/standalone'
 import axios from 'axios'
 
 const typeDefinitions = `#graphql
+  # This a comment - Enum types
   enum HasPhone {
     YES
     NO
@@ -68,6 +69,7 @@ const resolvers = {
   Mutation: {
     addPerson: async (root, args) => {
       const { data: persons } = await axios.get('http://localhost:3000/persons')
+
       if (persons.find((p) => p.name === args.name)) {
         throw new GraphQLError('Person already exists', {
           extensions: {
