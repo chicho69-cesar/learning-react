@@ -1,6 +1,6 @@
 import styles from './Persons.module.css'
 
-import useFindPerson from '../hooks/use-find-person'
+import { useFindPerson } from '../hooks/use-persons'
 
 export default function Persons({ persons }) {
   const { activePerson, setActivePerson, showPerson } = useFindPerson()

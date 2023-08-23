@@ -1,6 +1,6 @@
 import PersonForm from './components/PersonForm'
 import Persons from './components/Persons'
-import usePersons from './hooks/use-persons'
+import { usePersons } from './hooks/use-persons'
 
 export default function App() {
   const {

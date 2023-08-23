@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import { useQuery } from '@apollo/client'
+import { useQuery, useLazyQuery, useMutation } from '@apollo/client'
 
-import { GET_PERSONS_QUERY } from '../graphql/queries'
+import { FIND_PERSON_QUERY, GET_PERSONS_QUERY } from '../graphql/queries'
+import { ADD_PERSON_MUTATION } from '../graphql/mutations.js'
 
-export default function usePersons() {
+export function usePersons() {
   const [personCount, setPersonCount] = useState(0)
   const [persons, setPersons] = useState([])
 
@@ -24,5 +25,36 @@ export default function usePersons() {
     personCount,
     persons,
     refetch,
+  }
+}
+
+export function useFindPerson() {
+  const [activePerson, setActivePerson] = useState(null)
+  const [findPersonByName, result] = useLazyQuery(FIND_PERSON_QUERY)
+
+  useEffect(() => {
+    if (result.data) {
+      setActivePerson(result.data.findPerson)
+    }
+  }, [result])
+
+  const showPerson = (name) => {
+    findPersonByName({ variables: { nameToSearch: name } })
+  }
+
+  return {
+    activePerson,
+    setActivePerson,
+    showPerson,
+  }
+}
+
+export function useCreatePerson() {
+  const [addPerson] = useMutation(ADD_PERSON_MUTATION, {
+    refetchQueries: [GET_PERSONS_QUERY]
+  })
+
+  return {
+    addPerson
   }
 }

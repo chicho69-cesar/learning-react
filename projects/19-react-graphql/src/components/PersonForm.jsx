@@ -1,6 +1,6 @@
 import styles from './PersonForm.module.css'
 
-import useCreatePerson from '../hooks/use-create-person'
+import { useCreatePerson } from '../hooks/use-persons'
 
 export default function PersonForm() {
   const { addPerson } = useCreatePerson()
@@ -32,7 +32,7 @@ export default function PersonForm() {
         <input type='text' className={styles.input} name='city' placeholder='Ciudad...' />
 
         <button type='submit'>
-          Add person
+          Agregar persona
         </button>
       </form>
     </div>
