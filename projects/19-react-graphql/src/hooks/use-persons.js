@@ -1,26 +1,15 @@
 import { useEffect, useState } from 'react'
-import { gql, useQuery } from '@apollo/client'
+import { useQuery } from '@apollo/client'
 
-const GET_PERSONS_QUERY = gql`
-  query getPersonsData {
-    personCount
-    persons: allPersons {
-      name
-      id
-      phone
-      address {
-        city
-        street
-      }
-    }
-  }
-`
+import { GET_PERSONS_QUERY } from '../graphql/queries'
 
 export default function usePersons() {
   const [personCount, setPersonCount] = useState(0)
   const [persons, setPersons] = useState([])
 
-  const { loading, error, data, refetch } = useQuery(GET_PERSONS_QUERY)
+  const { loading, error, data, refetch } = useQuery(GET_PERSONS_QUERY/* , {
+    pollInterval: 2000,
+  } */)
 
   useEffect(() => {
     if (data) {

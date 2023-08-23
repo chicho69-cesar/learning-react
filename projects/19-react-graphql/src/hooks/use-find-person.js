@@ -1,19 +1,7 @@
 import { useEffect, useState } from 'react'
-import { gql, useLazyQuery } from '@apollo/client'
+import { useLazyQuery } from '@apollo/client'
 
-const FIND_PERSON_QUERY = gql`
-  query findPersonByName($nameToSearch: String!) {
-    findPerson(name: $nameToSearch) {
-      name
-      id
-      phone
-      address {
-        city
-        street
-      }
-    }
-  }
-`
+import { FIND_PERSON_QUERY } from '../graphql/queries'
 
 export default function useFindPerson() {
   const [activePerson, setActivePerson] = useState(null)
