@@ -2,8 +2,8 @@ import styles from './PersonForm.module.css'
 
 import { useCreatePerson } from '../hooks/use-persons'
 
-export default function PersonForm() {
-  const { addPerson } = useCreatePerson()
+export default function PersonForm({ notifyError }) {
+  const { addPerson } = useCreatePerson({ notifyError })
 
   const handleSubmit = (event) => {
     event.preventDefault()

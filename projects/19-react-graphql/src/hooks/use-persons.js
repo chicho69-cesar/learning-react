@@ -49,9 +49,12 @@ export function useFindPerson() {
   }
 }
 
-export function useCreatePerson() {
+export function useCreatePerson({ notifyError = () => {} }) {
   const [addPerson] = useMutation(ADD_PERSON_MUTATION, {
-    refetchQueries: [GET_PERSONS_QUERY]
+    refetchQueries: [GET_PERSONS_QUERY],
+    onError: (error) => {
+      notifyError(error.graphQLErrors[0].message)
+    }
   })
 
   return {
