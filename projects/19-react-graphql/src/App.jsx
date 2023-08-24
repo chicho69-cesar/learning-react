@@ -2,6 +2,7 @@ import { Toaster, toast } from 'sonner'
 
 import PersonForm from './components/PersonForm'
 import Persons from './components/Persons'
+import PhoneForm from './components/PhoneForm'
 import { usePersons } from './hooks/use-persons'
 
 export default function App() {
@@ -31,7 +32,9 @@ export default function App() {
         )}
       </div>
 
+      <PhoneForm notifyError={(error) => toast.error(error)} />
       <PersonForm notifyError={(error) => toast.error(error)} />
+      
       <Toaster richColors />
     </>
   )

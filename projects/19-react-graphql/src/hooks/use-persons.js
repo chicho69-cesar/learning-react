@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useQuery, useLazyQuery, useMutation } from '@apollo/client'
 
 import { FIND_PERSON_QUERY, GET_PERSONS_QUERY } from '../graphql/queries'
-import { ADD_PERSON_MUTATION } from '../graphql/mutations.js'
+import { ADD_PERSON_MUTATION, EDIT_PHONE_MUTATION } from '../graphql/mutations.js'
 
 export function usePersons() {
   const [personCount, setPersonCount] = useState(0)
@@ -49,7 +49,7 @@ export function useFindPerson() {
   }
 }
 
-export function useCreatePerson({ notifyError = () => {} }) {
+export function useCreatePerson({ notifyError }) {
   const [addPerson] = useMutation(ADD_PERSON_MUTATION, {
     refetchQueries: [GET_PERSONS_QUERY],
     onError: (error) => {
@@ -59,5 +59,23 @@ export function useCreatePerson({ notifyError = () => {} }) {
 
   return {
     addPerson
+  }
+}
+
+export function useEditPersonPhone({ notifyError }) {
+  const [editPhone, result] = useMutation(EDIT_PHONE_MUTATION, {
+    onError: (error) => {
+      notifyError(error.graphQLErrors[0].message)
+    }
+  })
+
+  useEffect(() => {
+    if (result.data && result.data.editNumber === null) {
+      notifyError('Persona no encontrada')
+    }
+  }, [notifyError, result])
+
+  return {
+    editPhone
   }
 }

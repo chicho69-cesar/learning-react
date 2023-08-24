@@ -1,0 +1,27 @@
+.title {
+  margin-top: 2rem;
+}
+
+.form {
+  width: 100%;
+  margin: 1rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.input {
+  flex-basis: 45%;
+  outline: none;
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.input:focus {
+  border-color: #fff;
+}

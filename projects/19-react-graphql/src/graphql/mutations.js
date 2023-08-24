@@ -18,3 +18,20 @@ export const ADD_PERSON_MUTATION = gql`
     }
   }
 `
+
+export const EDIT_PHONE_MUTATION = gql`
+  mutation($name: String!, $phone: String!) {
+    editNumber(
+      name: $name, 
+      phone: $phone
+    ) {
+      id
+      name
+      phone
+      address {
+        city
+        street
+      }
+    }
+  }
+`
