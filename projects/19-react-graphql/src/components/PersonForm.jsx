@@ -3,6 +3,7 @@ import styles from './PersonForm.module.css'
 import { useCreatePerson } from '../hooks/use-persons'
 
 export default function PersonForm({ notifyError }) {
+  /* Sacamos una mutación de nuestro custom hook */
   const { addPerson } = useCreatePerson({ notifyError })
 
   const handleSubmit = (event) => {
@@ -11,6 +12,7 @@ export default function PersonForm({ notifyError }) {
     const formData = new FormData(event.target)
     const { name, phone, street, city } = Object.fromEntries(formData)
 
+    /* Ejecutamos la mutación pasando le las variables que necesita */
     addPerson({ variables: {
       name,
       phone,
