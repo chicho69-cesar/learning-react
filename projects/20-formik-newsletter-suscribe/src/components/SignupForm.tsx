@@ -2,6 +2,7 @@ import { Formik, Form } from 'formik'
 
 import type { UserInfo } from '../types.d'
 import Checkbox from './customs/Checkbox'
+import Radio from './customs/Radio'
 import Select from './customs/Select'
 import TextInput from './customs/TextInput'
 import { validationSchema } from '../validations/signup.validations'
@@ -16,6 +17,7 @@ export default function SignupForm() {
           firstName: '',
           lastName: '',
           email: '',
+          notificationType: '',
           acceptedTerms: false,
           jobType: '',
         }}
@@ -58,10 +60,18 @@ export default function SignupForm() {
               <option value='other'>Other</option>
             </Select>
 
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <Radio name='notificationType' value='daily'>
+                Daily
+              </Radio>
+
+              <Radio name='notificationType' value='weekly'>
+                Weekly
+              </Radio>
+            </div>
+
             <Checkbox name='acceptedTerms'>
-              <>
-                I accept the terms and conditions
-              </>
+              I accept the terms and conditions
             </Checkbox>
 
             <div>

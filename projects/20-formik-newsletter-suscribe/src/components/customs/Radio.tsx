@@ -4,16 +4,16 @@ interface Props {
   children: JSX.Element | string
 }
 
-type CheckboxProps = Props & FieldHookConfig<any>
+type RadioProps = Props & FieldHookConfig<any>
 
-export default function Checkbox({ children, ...props }: CheckboxProps) {
-  const [field, meta] = useField({ ...props, type: 'checkbox' })
+export default function Radio({ children, ...props }: RadioProps) {
+  const [field, meta] = useField({ ...props, type: 'radio' })
 
   return (
     <div>
-      <label className='checkbox-input'>
+      <label className='radio-input'>
         <input
-          type='checkbox'
+          type='radio'
           {...field}
           {...(props as any)}
         />

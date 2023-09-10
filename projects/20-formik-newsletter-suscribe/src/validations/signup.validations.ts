@@ -10,6 +10,12 @@ export const validationSchema = Yup.object({
   email: Yup.string()
     .email('Invalid email address')
     .required('Required'),
+  notificationType: Yup.string()
+    .oneOf(
+      ['daily', 'weekly'],
+      'Invalid notification type'
+    )
+    .required('Required'),
   acceptedTerms: Yup.boolean()
     .oneOf([true], 'You must accept the terms and conditions.')
     .required('Required'),
