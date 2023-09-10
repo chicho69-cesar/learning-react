@@ -29,6 +29,10 @@ export default function SignupForm() {
         }}
         validationSchema={validationSchema}
       >
+        {/* Formik puede recibir un como children un componente Form o una función que 
+        recibe como argumento el parámetro formik, el cual es un objeto que contiene
+        todas las propiedades que nos interesan del formulario, y esta función regresa
+        el componente Form que se renderizara */}
         {formik => (
           <Form>
             <TextInput
@@ -75,10 +79,12 @@ export default function SignupForm() {
             </Checkbox>
 
             <div>
+              {/* El reset manda llamar a la función formik.handleReset */}
               <button type='reset'>
                 Reset
               </button>
 
+              {/* El submit manda llamar a la función formik.handleSubmit */}
               <button type='submit' disabled={formik.isSubmitting}>
                 Submit
               </button>

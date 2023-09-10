@@ -7,6 +7,7 @@ interface Props {
 type RadioProps = Props & FieldHookConfig<any>
 
 export default function Radio({ children, ...props }: RadioProps) {
+  /* Nuestro componente sera de tipo radio */
   const [field, meta] = useField({ ...props, type: 'radio' })
 
   return (

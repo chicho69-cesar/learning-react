@@ -28,16 +28,22 @@ import type { UserInfo } from '../types.d'
 } */
 
 export default function SignupForm() {
+  /* El hook de useFormik nos permite usar formik de una forma imperativa, es decir,
+  agregando y creando los componentes y haciendo de bind de los eventos del formulario
+  por nuestra cuenta, usando los componentes de formularios tradicionales */
   const formik = useFormik<UserInfo>({
+    // Valores iniciales del formulario
     initialValues: {
       firstName: '',
       lastName: '',
       email: '',
     },
+    // Evento submit
     onSubmit: (values: UserInfo) => {
       alert(JSON.stringify(values, null, 2))
     },
-    // validate
+    // validate, // Función que valida los campos del formulario
+    // Esquema de validación usando la librería yup
     validationSchema: Yup.object({
       firstName: Yup.string()
         .max(15, 'Must be 15 characters or less')
@@ -52,20 +58,20 @@ export default function SignupForm() {
   })
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form onSubmit={formik.handleSubmit}> {/* Evento de submit de formik */}
       <label htmlFor='firstName'>First Name</label>
       <input
         type='text'
         id='firstName'
-        // name='firstName'
-        // onChange={formik.handleChange}
-        // onBlur={formik.handleBlur}
-        // value={formik.values.firstName}
-        {...formik.getFieldProps('firstName')} // The same as above
+        // name='firstName' // El nombre debe ser al de initialValues
+        // onChange={formik.handleChange} // Evento del change del input
+        // onBlur={formik.handleBlur} // Evento del blur del input
+        // value={formik.values.firstName} // Valor del input dado por formik
+        {...formik.getFieldProps('firstName')} // Lo mismo que las cuatro 4 props de arriba
       />
       {/* First is for real time feedback && second is for submission feedback */}
       {(formik.touched.firstName && formik.errors.firstName) && (
-        <div>{formik.errors.firstName}</div>
+        <div>{formik.errors.firstName}</div> /* Errores del campo firstName */
       )}
 
       <label htmlFor='lastName'>Last Name</label>
