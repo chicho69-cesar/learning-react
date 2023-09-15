@@ -1,11 +1,15 @@
 import { create } from 'zustand'
+import type { Hotel } from '../types.d'
+import { FieldValues } from 'react-hook-form'
 
-const useStore = create<{
-  reservations: { hotel: string; dates: string }[]
-  addReservation: (hotel: string, dates: string) => void
-}>((set) => ({
+interface Store {
+  reservations: { hotel: Hotel; dates: FieldValues }[]
+  addReservation: (hotel: Hotel, dates: FieldValues) => void
+}
+
+const useStore = create<Store>((set) => ({
   reservations: [],
-  addReservation: (hotel: string, dates: string) => {
+  addReservation: (hotel: Hotel, dates: FieldValues) => {
     return set((state) => ({
       reservations: [...state.reservations, { hotel, dates }]
     }))
