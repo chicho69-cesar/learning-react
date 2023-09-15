@@ -4,6 +4,8 @@ import { Button, Card, CardActions, CardContent, CardMedia, Stack, Typography } 
 
 import type { Hotel } from '../types.d'
 
+/* Creamos una función asíncrona que se encargará de hacer la petición a la API
+y la usaremos con React Query */
 const fetchHotels = async (): Promise<Hotel[]> => {
   const response = await fetch('http://localhost:3001/hotels')
   if (!response.ok) {
@@ -14,6 +16,8 @@ const fetchHotels = async (): Promise<Hotel[]> => {
 }
 
 export default function HotelList() {
+  /* Hacemos la petición mediante React Query, usando una key y una función que llevara
+  a cabo el fetching de datos */
   const {
     data: hotels,
     isLoading,
@@ -36,7 +40,7 @@ export default function HotelList() {
       ;
       <Stack spacing={2}>
         {hotels?.map((hotel) => (
-          <Link key={hotel.id} href={`/hotel/${hotel.id}`}>
+          <Link key={hotel.id} href={`/hotel/${hotel.id}`}> {/* Usamos el Link de wouter */}
             <Card sx={{ maxWidth: 345, backgroundColor: '#e8e8e8' }}>
               <CardMedia
                 sx={{ height: 140 }}

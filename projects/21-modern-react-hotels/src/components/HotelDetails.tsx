@@ -5,6 +5,7 @@ import { Card, CardActions, CardContent, CardMedia, Typography } from '@mui/mate
 import BookingForm from './BookingForm'
 import type { Hotel } from '../types.d'
 
+/* Creamos una función asíncrona para hacer el fetching de datos con React Query */
 const fetchHotel = async (id: string): Promise<Hotel> => {
   const response = await fetch(`http://localhost:3001/hotels/${id}`)
 	if (!response.ok) {
@@ -15,14 +16,18 @@ const fetchHotel = async (id: string): Promise<Hotel> => {
 }
 
 export default function HotelDetails() {
+  /* El hook useRoute de wouter nos permite extraer el parámetro de la ruta, y 
+  este nos devuelve un arreglo, donde le primer elemento es una función match
+  y el objeto con los params de la ruta */
   const [, params] = useRoute('/hotel/:id')
+  /* Obtenemos la data desde react query, el estado de carga y si hubo un error en el fetch */
   const {
     data: hotel,
     isLoading,
     error,
   } = useQuery({
-    queryKey: ['hotel', params?.id],
-    queryFn: () => fetchHotel(params!.id)
+    queryKey: ['hotel', params?.id], // La query key es hotel y le asignamos el id de la ruta
+    queryFn: () => fetchHotel(params!.id) // Hacemos el fetch en base a la ruta
   })
 
   if (isLoading) {

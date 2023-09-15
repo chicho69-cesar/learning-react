@@ -8,10 +8,14 @@ import HotelDetails from './components/HotelDetails'
 function App() {
   return (
     <div>
+      {/* Creamos nuestro toaster con react-hot-toast */}
       <Toaster position='top-left' reverseOrder={false} />
       
+      {/* Creamos nuestro cliente de react-query */}
       <QueryClientProvider client={new QueryClient()}>
+        {/* Creamos nuestro Switch para navegar entre las rutas con wouter */}
         <Switch>
+          {/* Creamos nuestra primera ruta con wouter */}
           <Route
             path='/'
             component={HotelList}

@@ -8,6 +8,9 @@ interface Store {
   addReservation: (hotel: Hotel, dates: FieldValues) => void
 }
 
+/* Creamos un hook el cual sera el resultado de la función create, la cual nos regresara
+un estado que tiene las propiedades establecidas por el tipo Store. La función set
+que recibe como callback la función create nos permite modificar el estado. */
 const useStore = create<Store>((set) => ({
   reservations: [],
   addReservation: (hotel: Hotel, dates: FieldValues) => {
