@@ -1,9 +1,10 @@
 import { create } from 'zustand'
-import type { Hotel } from '../types.d'
-import { FieldValues } from 'react-hook-form'
+import type { FieldValues } from 'react-hook-form'
+
+import type { Hotel, Reservation } from '../types.d'
 
 interface Store {
-  reservations: { hotel: Hotel; dates: FieldValues }[]
+  reservations: Reservation[]
   addReservation: (hotel: Hotel, dates: FieldValues) => void
 }
 
