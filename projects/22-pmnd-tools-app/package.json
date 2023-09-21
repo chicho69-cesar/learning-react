@@ -4,6 +4,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@pandacss/dev": "^0.15.1",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
     "@typescript-eslint/eslint-plugin": "6.0.0",
@@ -21,6 +22,7 @@
     "build": "tsc && vite build",
     "dev": "vite",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "prepare": "panda codegen",
     "preview": "vite preview"
   },
   "type": "module",
