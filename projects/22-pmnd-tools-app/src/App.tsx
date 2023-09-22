@@ -1,10 +1,8 @@
-import { css } from '../styled-system/css'
+import RootRouter from './routes/RootRouter'
 
 function App() {
   return (
-    <>
-      <div className={css({ fontSize: '2xl', fontWeight: 'extrabold' })}>Hello 🐼!</div>
-    </>
+    <RootRouter />
   )
 }
 
