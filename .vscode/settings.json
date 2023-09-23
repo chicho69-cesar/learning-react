@@ -56,14 +56,11 @@
         "todoapp",
         "valtio",
         "Villalobos",
+        "Wordle",
         "wouter",
         "zustand"
     ],
-    "editor.codeActionsOnSave": {
-        "source.fixAll": true,
-        "source.organizeImports": true
-    },
-    "editor.formatOnSave": true
+    "deno.enable": true,
     /* "[javascript]": {
     "editor.defaultFormatter": "rome.rome"
   },
@@ -76,4 +73,9 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "rome.rome"
   } */
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.organizeImports": true
+    },
+    "editor.formatOnSave": true
 }
