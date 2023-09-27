@@ -1064,6 +1064,9 @@ importers:
       '@react-spring/web':
         specifier: 9.7.3
         version: 9.7.3(react-dom@18.2.0)(react@18.2.0)
+      date-fns:
+        specifier: ^2.30.0
+        version: 2.30.0
       jotai:
         specifier: 2.4.2
         version: 2.4.2(@types/react@18.2.15)(react@18.2.0)
@@ -1073,6 +1076,9 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
+      react-tagged-state:
+        specifier: ^1.23.3
+        version: 1.23.3(react@18.2.0)
       react-use-measure:
         specifier: 2.1.1
         version: 2.1.1(react-dom@18.2.0)(react@18.2.0)
@@ -10652,6 +10658,14 @@ packages:
       prismjs: 1.29.0
       react: 18.2.0
       refractor: 3.6.0
+    dev: false
+
+  /react-tagged-state@1.23.3(react@18.2.0):
+    resolution: {integrity: sha512-XBMeR4LTVHPQXeghhZwrJ6LEl0QGX26pvc37T93wZ7gDbI+vQ0A14A9NZ3lDTqPOTTphQmzdLPI01Ji5rYFw4Q==}
+    peerDependencies:
+      react: '>=18.0.0'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-transition-group@2.9.0(react-dom@18.2.0)(react@18.2.0):
