@@ -38,7 +38,7 @@ export default function CreateTodoForm() {
           placeholder='Add a new todo'
           autoComplete='off'
           minLength={2}
-          className={`${input} ${inputText}`}
+          className={input}
         />
       </div>
 
@@ -72,10 +72,6 @@ const input = css({
   outline: 'none',
   rounded: 'md',
   marginBottom: '16px',
-})
-
-const inputText = css({
-  width: '80%'
 })
 
 const label = css({
