@@ -5,6 +5,9 @@ import Jotai from '../screens/Jotai'
 import ReactSpring from '../screens/ReactSpring'
 import Valtio from '../screens/Valtio'
 import Zustand from '../screens/Zustand'
+import TextLengthExample from '../modules/jotai/examples/TextLength'
+import TodosExample from '../modules/jotai/examples/Todos'
+import HackerNewsExample from '../modules/jotai/examples/HackerNews'
 
 export default function RootRouter() {
   return (
@@ -32,6 +35,21 @@ export default function RootRouter() {
       <Route
         path='/react-spring'
         component={ReactSpring}
+      />
+
+      <Route
+        path='/jotai/text-length'
+        component={TextLengthExample}
+      />
+
+      <Route
+        path='/jotai/todos'
+        component={TodosExample}
+      />
+
+      <Route
+        path='/jotai/hacker-news'
+        component={HackerNewsExample}
       />
     </Switch>
   )
