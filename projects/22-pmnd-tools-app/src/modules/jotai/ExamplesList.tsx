@@ -10,22 +10,22 @@ export default function ExamplesList() {
       <div className={exampleList}>
         <Link href='/jotai/text-length' className={link}>
           <h3>Text length example</h3>
-          <p>Count the length and show the uppercase of any text.</p>
+          <p>Cuenta la longitud y muestra el texto en mayúsculas.</p>
         </Link>
 
         <Link href='/jotai/todos' className={link}>
           <h3>Todos example</h3>
           <p>
-            Record your todo list by typing them into this app, 
-            check them off if you have completed the task, 
-            and switch between Completed and Uncompleted to 
-            see the status of your task.
+            Recuerda tu lista de tareas por escribirlas en este app, 
+            marca las tareas completadas si has terminado la tarea, 
+            y cambia entre Completadas y No Completadas para 
+            ver el estado de tu tarea.
           </p>
         </Link>
 
         <Link href='/jotai/hacker-news' className={link}>
           <h3>Hacker news example</h3>
-          <p>Demonstrate a news article with Jotai, hit next to see more articles.</p>
+          <p>Demostrar un articulo de noticias con Jotai, pulsa next para ver mas artículos.</p>
         </Link>
       </div>
     </div>
