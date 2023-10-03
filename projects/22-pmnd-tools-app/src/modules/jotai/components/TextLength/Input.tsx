@@ -4,6 +4,9 @@ import { css } from '../../../../../styled-system/css'
 import { textAtom } from '../../store/text-length'
 
 export default function Input() {
+  /* El hook useAtom nos regresa una tupla con dos valores, el primero
+  es el valor del estado del atom y el segundo la función para actualizar
+  el valor de dicho atom */
   const [text, setText] = useAtom(textAtom)
 
   return (

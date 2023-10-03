@@ -4,6 +4,8 @@ import { css } from '../../../../../styled-system/css'
 import { postId } from '../../store/hacker-news'
 
 export default function Next() {
+  /* Mediante el hook useSetAtom podemos obtener la función para actualizar
+  el valor del estado del atom que le pasamos a este hook */
   const setPostId = useSetAtom(postId)
 
   return (

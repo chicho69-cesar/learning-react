@@ -5,6 +5,7 @@ import { css } from '../../../../../styled-system/css'
 import { postData } from '../../store/hacker-news'
 
 export default function PostTitle() {
+  /* Resolvemos el atom postData */
   const [{ by, text, time, title, url }] = useAtom(postData)
 
   return (

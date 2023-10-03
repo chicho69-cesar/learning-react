@@ -4,6 +4,7 @@ import { css } from '../../../../../styled-system/css'
 import { textLenAtom } from '../../store/text-length'
 
 export default function CharCount() {
+  /* Obtenemos el valor del estado del atom textLenAtom */
   const [len] = useAtom(textLenAtom)
 
   return (

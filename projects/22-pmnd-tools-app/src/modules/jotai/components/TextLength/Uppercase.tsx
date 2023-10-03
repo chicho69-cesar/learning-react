@@ -4,6 +4,7 @@ import { css } from '../../../../../styled-system/css'
 import { textUpperAtom } from '../../store/text-length'
 
 export default function Uppercase() {
+  /* Resolvemos el valor del atom textUpperAtom */
   const [uppercase] = useAtom(textUpperAtom)
   
   return (

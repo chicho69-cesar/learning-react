@@ -11,6 +11,7 @@ interface TodoItemProps {
 }
 
 export default function TodoItem({ atom, remove }: TodoItemProps) {
+  /* Resolvemos el PrimitiveAtom que recibimos como prop al componente */
   const [item, setItem] = useAtom(atom)
 
   const toggleCompleted = () => {

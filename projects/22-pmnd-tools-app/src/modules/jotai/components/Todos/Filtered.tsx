@@ -13,6 +13,8 @@ interface FilteredProps {
 }
 
 export default function Filtered({ remove }: FilteredProps) {
+  /* Resolvemos el atom de los filteredAtom, en el cual obtenemos el valor
+  del atom, el cual es un PrimitiveAtom que aun necesita de ser resuelto */
   const [todos] = useAtom(filteredAtom)
 
   const transitions = useTransition(todos, {

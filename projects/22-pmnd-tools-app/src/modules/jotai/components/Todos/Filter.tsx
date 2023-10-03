@@ -5,6 +5,7 @@ import { filterAtom } from '../../store/todos'
 import type { FilterType } from '../../types/todos.d'
 
 export default function Filter() {
+  /* Resolvemos el atom filterAtom y obtenemos tanto valor como set */
   const [filter, setFilter] = useAtom(filterAtom)
 
   return (

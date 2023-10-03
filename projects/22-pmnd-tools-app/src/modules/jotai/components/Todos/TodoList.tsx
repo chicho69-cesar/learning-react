@@ -10,6 +10,8 @@ import Filtered from './Filtered'
 type RemoveFn = (item: PrimitiveAtom<Todo>) => void
 
 export default function TodoList() {
+  /* Obtenemos la función set de todosAtom para cambiar el valor del atom, 
+  el cual debe de ser un PrimitiveAtom */
   const setTodos = useSetAtom(todosAtom)
 
   const remove: RemoveFn = (todo) => {
@@ -24,6 +26,9 @@ export default function TodoList() {
 
     const title = formData.get('title') as string
 
+    /* Cuando hacemos un set de un nuevo valor del atom, debemos de usar
+    la función atom de jotai para que el valor sea en efecto un PrimitiveAtom
+    le pasamos el tipo que va a resolver el atom y el valor de este */
     setTodos((prev) => [
       ...prev,
       atom<Todo>({ title, completed: false })

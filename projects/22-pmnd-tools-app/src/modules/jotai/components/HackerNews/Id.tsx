@@ -5,6 +5,7 @@ import { css } from '../../../../../styled-system/css'
 import { postId } from '../../store/hacker-news'
 
 export default function Id() {
+  /* Resolvemos el valor del atom postId con el hook useAtom */
   const [id] = useAtom(postId)
 
   const props = useSpring({
