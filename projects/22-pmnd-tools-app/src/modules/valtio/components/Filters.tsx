@@ -6,6 +6,7 @@ import type { Filter } from '../types/todos.d'
 import { setFilter, store } from '../store/todos'
 
 export default function Filters() {
+  /* Accedemos al valor del estado con el hook useSnapshot */
   const snap = useSnapshot(store)
   const filterValues: Filter[] = ['all', 'completed', 'overdue', 'pending']
 

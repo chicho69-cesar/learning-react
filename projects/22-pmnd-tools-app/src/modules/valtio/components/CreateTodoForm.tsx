@@ -28,6 +28,7 @@ export default function CreateTodoForm() {
   return (
     <form
       ref={formRef}
+      /* Ejecutamos una función que modifica el estado */
       onSubmit={(e) => addTodo(e, reset)}
     >
       <div className={inputGroup}>

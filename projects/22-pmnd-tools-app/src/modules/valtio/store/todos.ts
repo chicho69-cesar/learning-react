@@ -1,12 +1,17 @@
 import { proxy } from 'valtio'
 import type { Filter, Status, TodoProxyStore } from '../types/todos.d'
 
+/* Para crear un estado usando valtio, debemos de crear una instancia de un proxy,
+pudiendo tipar el estado a traves de un genérico, un proxy va a actuar como una
+señal, ya que a diferencia de jotai no debemos de usar un Provider para usarlo */
 export const store = proxy<TodoProxyStore>({
   filter: 'all',
   todos: []
 })
 
 export const countdown = (index: number) => {
+  /* Podemos acceder a un valor de un proxy como si fuera una variable común sin
+  necesidad de usar un hook o algo especial para acceder a su valor y cambiarlo */
   const todo = store.todos[index]
   
   if (!todo) return
@@ -42,6 +47,7 @@ export const addTodo = (e: React.SyntheticEvent, reset: VoidFunction) => {
   const description = target.description.value
   const now = Date.now()
 
+  /* Actualizamos el valor del estado del proxy */
   store.todos.push({
     description,
     status: 'pending',

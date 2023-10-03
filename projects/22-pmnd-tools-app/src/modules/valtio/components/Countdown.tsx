@@ -9,6 +9,9 @@ interface CountdownProps {
 }
 
 export default function Countdown({ index }: CountdownProps) {
+  /* Para los componentes o los custom hooks podemos acceder al valor de un estado global
+  de un proxy usando el hook useSnapshot, el cual recibe como parámetro el proxy,
+  y nos regresa el valor del estado */
   const snap = useSnapshot(store.todos[index])
   const delta = calcTimeDelta(snap.timeLeft)
 

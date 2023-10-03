@@ -5,6 +5,7 @@ export default function Home() {
   const list = ['jotai', 'valtio', 'zustand', 'react-spring']
 
   return (
+    /* Usamos una clase de estilos de PandaCSS */
     <div className={container}>
       <h1 className={title}>PMND Tools App</h1>
 
@@ -20,6 +21,8 @@ export default function Home() {
   )
 }
 
+/* Creamos una clase de estilos PandaCSS siendo muy parecido en cuanto a valores
+y propiedades a TailwindCSS pero con una forma de escribir estilos como CSS in JS */
 const container = css({
   minH: '100vh',
   backgroundColor: 'slate.600',
@@ -44,6 +47,8 @@ const techList = css({
   gap: '1.5rem'
 })
 
+/* Los estilos con Panda se escriben en algo parecido a Sass pero con valores de
+Tailwind y siendo CSS in JS */
 const techItem = css({
   padding: '1rem',
   backgroundColor: 'gray.100',

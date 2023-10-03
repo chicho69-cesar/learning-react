@@ -5,6 +5,7 @@ import { removeTodo, store, toggleDone } from '../store/todos'
 import Countdown from './Countdown'
 
 export default function Todos() {
+  /* Accedemos al valor del estado usando useSnapshot */
   const snap = useSnapshot(store)
 
   return (
