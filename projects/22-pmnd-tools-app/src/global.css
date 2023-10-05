@@ -10,6 +10,17 @@ body {
   margin: 0;
 }
 
+body::-webkit-scrollbar {
+  width: 7px;
+  height: 1px;
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #364552;
+  border-radius: 5px;
+}
+
 *,
 *:after,
 *:before {
