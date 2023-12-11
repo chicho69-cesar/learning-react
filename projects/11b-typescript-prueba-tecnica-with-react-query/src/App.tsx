@@ -8,6 +8,8 @@ import { useUsers } from './hooks/use-users'
 import { SortBy, type User } from './types.d'
 
 function App() {
+  /* Obtenemos toda la informacion de la query que hacemos con el custom hook
+  useUsers, el cual interiormente hace uso de react-query para hacer fetch */
   const { isLoading, isError, users, hasNextPage, refetch, fetchNextPage } = useUsers()
 
   const [showColors, setShowColors] = useState(false)
