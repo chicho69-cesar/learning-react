@@ -1,34 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { Container, Stack, Typography, useTheme } from '@mui/material'
+import useMediaQuery from '@mui/material/useMediaQuery'
+
+import JavaScriptLogo from './components/JavaScriptLogo'
+import Start from './components/Start'
+import Game from './components/Game'
+import Results from './components/Results'
+import { useQuestionsStore } from './store/questions'
+import useQuestionsData from './hooks/use-questions-data'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const questions = useQuestionsStore((state) => state.questions)
+  const { unanswered } = useQuestionsData()
+  const theme = useTheme()
+
+  const medium = useMediaQuery(theme.breakpoints.up('md'))
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <main>
+      <Container maxWidth='sm'>
+        <Stack direction='row' gap={2} alignItems='center' justifyContent='center'>
+          <JavaScriptLogo />
+
+          <Typography variant={medium ? 'h2' : 'h5'} component='h1'>
+            JavaScript Quiz
+          </Typography>
+        </Stack>
+
+        {questions.length === 0 && <Start />}
+        {questions.length > 0 && unanswered > 0 && <Game />}
+        {questions.length > 0 && unanswered === 0 && <Results />}
+
+        <strong style={{ display: 'block', fontSize: '14px', marginTop: '48px' }}>
+          Desarrollado con TypeScript + Zustand -{' '}
+          <a style={{ color: 'yellow' }} href='https://github.com/chicho69-cesar/learning-react/tree/master/projects/13-javascript-quiz-con-zustand' target='_blank'>
+            Ir al código
+          </a>
+        </strong>
+      </Container>
+    </main>
   )
 }
 
