@@ -20,6 +20,7 @@
   "devDependencies": {
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
+    "@vanilla-extract/vite-plugin": "^3.9.3",
     "@vitejs/plugin-react-swc": "3.3.2",
     "typescript": "5.0.2",
     "vite": "4.4.5"
