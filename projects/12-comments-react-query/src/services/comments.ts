@@ -15,6 +15,9 @@ export async function getComments(): Promise<CommentWithId[]> {
       }
     })
 
+    /* Es sumamente importante que se manejen los errores cuando la petición no fue
+    exitosa, ya que usando fetch si la respuesta no fue exitosa no nos manda al catch 
+    como si lo hace axios por ejemplo. */
     if (!response.ok) {
       throw new Error('Failed to fetch the comments')
     }
