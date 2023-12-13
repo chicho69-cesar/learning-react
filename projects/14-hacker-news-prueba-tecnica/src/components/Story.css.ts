@@ -30,7 +30,7 @@ export const storyFooter = style({
 export const storyLink = style({
   color: '#888',
   textDecoration: 'none',
-  ':hover': {
+  ':hover': { /* Asi podemos usar pseudo elementos y pseudo clases */
     textDecoration: 'underline'
   }
 })

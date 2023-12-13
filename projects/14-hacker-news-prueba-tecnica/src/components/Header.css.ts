@@ -1,5 +1,6 @@
 import { style } from '@vanilla-extract/css'
 
+/* Creamos una clase mediante vanilla extract para los componentes */
 export const header = style({
   alignItems: 'center',
   borderBottom: '1px solid #eee',

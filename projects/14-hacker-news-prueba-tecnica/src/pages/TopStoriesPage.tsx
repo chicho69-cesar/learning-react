@@ -7,8 +7,16 @@ import Story from '../components/Story'
 
 export default function TopStoriesPage() {
   // const { data } = useSWR('stories', () => getTopStories(1, 10))
+  /* useSWRInfinite nos brinda la capacidad de activar varias solicitudes con un hook.
+  Este hook acepta una función que devuelve la key de la solicitud, una función 
+  fetcher y las opciones. Devuelve los mismos valores que useSWR, incluidos dos
+  valores adicionales, el tamaño de la pagina y un set para el tamaño de la pagina,
+  como si fuera un estado de React.  */
   const { data, isLoading, setSize } = useSWRInfinite(
-    (index) => `stories/${index + 1}`, // la key que usa para cachear los resultados
+    /* Esta función regresa la key que usa para cachear los resultados, acepta
+    el index y la data de la pagina previa. */
+    (index) => `stories/${index + 1}`,
+    /* Función fetcher, recibe la key de cada pagina */
     (key) => {
       const [, page] = key.split('/')
       return getTopStories(Number(page), 10)
@@ -23,12 +31,14 @@ export default function TopStoriesPage() {
   }, [])
 
   useEffect(() => {
-    // use intersection observer to detect end of the page scroll
+    /* Usamos intersection observer para determinar el final del scroll y
+    aumentar el tamaño de la paginación en uno, para que swr infinite cargue una pagina
+    más de la data. */
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting && !isLoading) {
         setSize((prevSize) => prevSize + 1)
       }
-    }, {
+    }, { /* Cuando el observer este a 100 px */
       rootMargin: '100px'
     })
 
@@ -36,8 +46,10 @@ export default function TopStoriesPage() {
       return
     }
 
+    /* Observamos el chivatoEl */
     observer.observe(chivatoEl.current)
 
+    /* Dejamos de observar lo que se este observando al desmontar el componente */
     return () => {
       observer.disconnect()
     }
@@ -53,6 +65,8 @@ export default function TopStoriesPage() {
         ))}
       </ul>
 
+      {/* Le agregamos la referencia a este elemento para ser el elemento que sera
+      observado, justamente al final de las stories. */}
       {!isLoading && <span ref={chivatoEl}>.</span>}
 
       {/* <button onClick={() => { setSize(size + 1) }}>
