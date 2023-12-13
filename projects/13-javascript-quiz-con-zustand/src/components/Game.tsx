@@ -6,6 +6,9 @@ import Question from './Question'
 import { useQuestionsStore } from '../store/questions'
 
 export default function Game() {
+  /* Esto que sigue a continuación no es recomendado, por si obtenemos la información del
+  estado haciendo destructuring, hacemos que este componente se suscriba a todo el estado
+  y no solamente a lo que necesita */
   const { questions, currentQuestion, goNextQuestion, goPreviousQuestion } = useQuestionsStore((state) => state)
   const questionInfo = questions[currentQuestion]
 

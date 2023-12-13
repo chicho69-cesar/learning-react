@@ -13,6 +13,8 @@ interface Props {
 export default function Question({ info }: Props) {
   const selectAnswer = useQuestionsStore((state) => state.selectAnswer)
 
+  /* Hacemos uso de un clousure para crear una función que sirva como evento para el
+  click de un button. */
   const handleClickCreate = (answerIndex: number) => () => {
     selectAnswer(info.id, answerIndex)
   }
@@ -32,7 +34,7 @@ export default function Question({ info }: Props) {
           <ListItem key={index} disablePadding divider>
             <ListItemButton
               disabled={info.userSelectedAnswer != null}
-              onClick={handleClickCreate(index)}
+              onClick={handleClickCreate(index)} // Hacemos uso de nuestro evento estilo clousure
               sx={{
                 backgroundColor: getBackgroundColor(info, index)
               }}

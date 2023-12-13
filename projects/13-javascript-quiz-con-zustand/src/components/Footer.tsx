@@ -4,6 +4,7 @@ import useQuestionsData from '../hooks/use-questions-data'
 
 export default function Footer() {
   const { correct, incorrect, unanswered } = useQuestionsData()
+  /* Obtenemos una función de nuestro estado */
   const reset = useQuestionsStore((state) => state.reset)
 
   return (

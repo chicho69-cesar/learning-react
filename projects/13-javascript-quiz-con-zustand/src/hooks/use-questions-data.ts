@@ -1,6 +1,7 @@
 import { useQuestionsStore } from '../store/questions'
 
 export default function useQuestionsData() {
+  /* Obtenemos las questions de nuestro estado global */
   const questions = useQuestionsStore((state) => state.questions)
 
   let correct = 0

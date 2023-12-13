@@ -10,10 +10,18 @@ import { useQuestionsStore } from './store/questions'
 import useQuestionsData from './hooks/use-questions-data'
 
 function App() {
+  /* Extraemos las questions del estado global creado con Zustand, el hecho de que 
+  solamente recuperemos las questions de esta forma en lugar de usar destructuración
+  es porque de esta forma el componente solo se suscribe al valor de las questions,
+  y si usáramos destructuring se suscribiría a todos los cambios de los demás elementos
+  del estado aunque no sean necesarios para este componente, y por consecuencia
+  provocara que el componente se vuelva a renderizar sin ninguna necesidad */
   const questions = useQuestionsStore((state) => state.questions)
   const { unanswered } = useQuestionsData()
   const theme = useTheme()
 
+  /* Extraemos el tamaño de la pantalla actual, para saber si mostrar el título con
+  h2 o h5, dependiendo del tamaño de la pantalla. */
   const medium = useMediaQuery(theme.breakpoints.up('md'))
 
   return (
